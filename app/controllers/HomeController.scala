@@ -16,7 +16,7 @@ class HomeController @Inject()(cc: ControllerComponents) extends AbstractControl
     logger.warn(s"${request.id} => This is a WARN message")
     logger.error(s"${request.id} => This is an ERROR message")
 
-    Ok(views.html.index())
+    Ok(s"Hello, World. This is request ${request.id}")
   }
 
   def upload = Action(parse.multipartFormData) { request =>
