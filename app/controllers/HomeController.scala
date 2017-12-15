@@ -10,11 +10,11 @@ class HomeController @Inject()(cc: ControllerComponents) extends AbstractControl
   private lazy val logger = Logger(this.getClass)
 
   def index() = Action { implicit request: Request[AnyContent] =>
-    println("This is a println message")
-    logger.debug("This is a DEBUG message")
-    logger.info("This is an INFO message")
-    logger.warn("This is a WARN message")
-    logger.error("This is an ERROR message")
+    println(s"${request.id} => This is a println message")
+    logger.debug(s"${request.id} => This is a DEBUG message")
+    logger.info(s"${request.id} => This is an INFO message")
+    logger.warn(s"${request.id} => This is a WARN message")
+    logger.error(s"${request.id} => This is an ERROR message")
 
     Ok(views.html.index())
   }
